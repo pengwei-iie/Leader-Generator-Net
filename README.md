@@ -56,13 +56,8 @@ python QA_predict.py --data_dir=data/fairyqa/exim/ --model_name_or_path=facebook
 python QA_predict.py --data_dir=data/fairyqa/exim/ --model_name_or_path=facebook/bart-large --tokenizer_name=facebook/bart-large --config_name=facebook/bart-large --scl_path=save/bert_128_fairyqa/non_cl/last.pth --model_path=results/fairyqa_scl_1024_no128_pg_exim/epoch=0.ckpt --output_name=fairyqa_scl_1024_no128_pg_exim/e0 --pgnet exim
 ```
 
-%## Citation
-%Our Paper is accepted to SIGIR 2023, you may cite:
-%```
-%@inproceedings{xu2022fairytaleqa,
-%    author={Xu, Ying and Wang, Dakuo and Yu, Mo and Ritchie, Daniel and Yao, Bingsheng and Wu, Tongshuang and Zhang, Zheng and Li, Toby Jia-Jun and Bradford, Nora and Sun, Branda and Hoang, Tran Bao and %Sang, Yisi and Hou, Yufang and Ma, Xiaojuan and Yang, Diyi and Peng, Nanyun and Yu, Zhou and Warschauer, Mark},
-%    title = {Fantastic Questions and Where to Find Them: Fairytale{QA} -- An Authentic Dataset for Narrative Comprehension},
-%    publisher = {Association for Computational Linguistics},
-%    year = {2022}
-%}
-%```
+## Citation
+Our Paper is accepted to SIGIR 2023, you may cite:
+```
+WAITING
+```
