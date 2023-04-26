@@ -59,5 +59,11 @@ python QA_predict.py --data_dir=data/fairyqa/exim/ --model_name_or_path=facebook
 ## Citation
 Our Paper is accepted to SIGIR 2023, you may cite:
 ```
-WAITING
+@inproceedings{3591710,
+  author    = {Peng Wei and Li Wanshui and Hu Yue},
+  title     = {Leader-Generator Net: Dividing Skill and Implicitness for Conquering FairytaleQA},
+  booktitle = {SIGIR'23: The 46th International {ACM} {SIGIR} Conference on Research and Development in Information Retrieval, Taipei, Taiwan, July 23-27, 2023},
+  publisher = {ACM},
+  year      = {2023},
+  doi       = {10.1145/3539618.3591710}
 ```
