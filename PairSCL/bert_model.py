@@ -70,7 +70,7 @@ class LinearClassifier(nn.Module):
 class PairSupConBert(nn.Module):
     def __init__(self, encoder, dropout=0.5, is_train=True):
         super(PairSupConBert, self).__init__()
-        self.encoder = encoder.bert
+        self.encoder = encoder.bert    # encoder 其实就是BertForCL
         self.dim_mlp = encoder.fc.weight.shape[1]
         self.dropout = dropout
         self.is_train = is_train
@@ -82,19 +82,19 @@ class PairSupConBert(nn.Module):
                                     encoder.bert.pooler)
         self.head = nn.Sequential(nn.Linear(self.dim_mlp,self.dim_mlp),
                                         nn.ReLU(inplace=True),
-                                        encoder.fc)
+                                        encoder.fc)    # encoder.fc 就是分类层
         
         
     def forward(self, input_ids=None, attention_mask=None, token_type_ids=None, position_ids=None, head_mask=None, inputs_embeds=None):
-        input_ids2 = input_ids * token_type_ids
-        input_ids1 = input_ids - input_ids2
-        feat1 = self.encoder(input_ids1,
+        input_ids_a = input_ids * token_type_ids
+        input_ids_b = input_ids - input_ids_a
+        feat1 = self.encoder(input_ids_b,
             attention_mask=attention_mask,
             token_type_ids=token_type_ids,
             position_ids=position_ids,
             head_mask=head_mask,
             inputs_embeds=inputs_embeds)
-        feat2 = self.encoder(input_ids2,
+        feat2 = self.encoder(input_ids_a,
             attention_mask=attention_mask,
             token_type_ids=token_type_ids,
             position_ids=position_ids,
